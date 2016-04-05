@@ -18,8 +18,10 @@ feature 'Creating Cars' do
 
   scenario 'can make another car' do
     car = FactoryGirl.create(:car)
+    car1 = FactoryGirl.create(:car)
     visit '/'
     expect(page).to have_content("#{car.make} #{car.model} #{car.year} #{car.price}")
+    expect(page).to have_content("#{car1.make} #{car1.model} #{car1.year} #{car1.price}")
 
 
   end
